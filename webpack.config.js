@@ -99,24 +99,6 @@ module.exports = {
               sourceMap: false
             }
           },
-
-          {
-            loader: "postcss-loader",
-
-            options: {
-
-              postcssOptions: {
-                // postcss plugins, can be exported to postcss.config.js
-                plugins: function () {
-                  return [
-                    require('autoprefixer')
-                  ];
-                }
-              }
-
-            }
-          },
-
           {
             loader: "sass-loader",
 
