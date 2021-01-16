@@ -107,6 +107,17 @@ module.exports = {
             }
           },
         ]
+      },
+
+      // 画像ファイル
+      {
+        test: /\.png$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          context: './src',
+          outputPath: 'assets'
+        }
       }
     ]
   },

@@ -2,6 +2,21 @@ import $ from 'jquery'
 
 import util from './util'
 
+import '../../assets/sortie-febstart.png'
+import '../../assets/sortie-marstart.png'
+import '../../assets/sortie-septstart.png'
+import '../../assets/arsenal-janstart.png'
+import '../../assets/arsenal-septstart.png'
+import '../../assets/arsenal-octstart.png'
+import '../../assets/arsenal-novstart.png'
+import '../../assets/expedition-febstart.png'
+import '../../assets/expedition-marstart.png'
+import '../../assets/expedition-maystart.png'
+import '../../assets/expedition-augstart.png'
+import '../../assets/expedition-septstart.png'
+import '../../assets/exercise-octstart.png'
+import '../../assets/refurbishment-novstart.png'
+
 const createTable = () => {
   // https://qiita.com/rokko2massy/items/83283bce06acbba7a4f0
 
@@ -140,7 +155,7 @@ const createTable = () => {
       if( !util.hasProperty(element, typeName) ) {
         return
       }
-      searchCell(result, element.month, typeName).html(createMissionHTML(element[typeName]))
+      searchCell(result, element.month, typeName).html(createMissionHTML(element.month, typeName, element[typeName]))
 
     })
 
@@ -149,12 +164,20 @@ const createTable = () => {
   return result.prop('outerHTML')
 }
 
-const createMissionHTML = (captionCotains) => {
+const createMissionHTML = (month, typeName, captionCotains) => {
   const result = $('<ul></ul>')
   captionCotains.forEach(element => {
-    result.append($(`<li>${element.caption}</li>`))
+    // result.append($(`<li><img src='./assets/sortie-febstart.png' />${element.caption}</li>`))
+    result.append($(`<li>${crateImageTag(month, typeName)}${element.caption}</li>`))
   })
   return result.prop('outerHTML')
+}
+
+// 画像ファイル名に変換する
+const crateImageTag = (month, typeName) => {
+  const monthTable = { 1:'jan', 2:'feb', 3:'mar', 4:'apr', 5:'may', 6:'june', 7:'july', 8:'aug', 9:'sept', 10:'oct', 11:'nov', 12:'dec' }
+
+  return `<img src='./assets/${typeName}-${monthTable[month]}start.png' />`
 }
 
 const searchCell = (tableData, month, typeName) => {
