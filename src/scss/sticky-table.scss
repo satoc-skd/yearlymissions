@@ -1,0 +1,35 @@
+/*ラッパー*/
+div.table-wrapper {
+    overflow: scroll;
+    max-height:400px; /*任意*/
+    max-width:1200px; /*任意*/
+    background-color: #fff;
+  }
+  
+  /*行ヘッダーを固定する。topの値はjsで動的に指定*/
+  table.sticky-table thead tr[class*="fixed-header-"] th {
+      position: -webkit-sticky; /* for Safari */
+      position: sticky;
+      /* tbody tdより手前に表示する */
+      z-index: 1;
+  }
+  
+  /*行ヘッダーと列ヘッダーが重なる部分を固定する。top,leftの値はjsで動的に指定*/
+  table.sticky-table thead tr[class*="fixed-header-"] th[class*="fixed-column-"] {
+      /* 全てのセルより手前に表示する */
+      z-index: 2;
+  }
+  
+  /*列ヘッダーを固定する。leftの値はjsで動的に指定*/
+  table.sticky-table tbody th[class*="fixed-column-"] {
+      position: -webkit-sticky; /* for Safari */
+      position: sticky;
+      /* tbody tdより手前に表示する */
+      z-index: 1;
+  }
+  
+  table.sticky-table ul {
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+  }

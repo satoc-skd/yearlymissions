@@ -1,10 +1,16 @@
+'use strict'
+
 // import Util from './modules/Util'
 // import Ro from './modules/Ro'
 // import Hc from './modules/Hc'
 // import '../styles/style.css'
+import $ from 'jquery'
 
 import 'bootstrap'
 import '../scss/custom.scss'
+// import '../scss/sticky-table.css'
+
+import Tb from './modules/Tb'
 
 const init = async () => {
   // document.getElementsByClassName('left')[0].innerHTML = Util.createLogo()
@@ -15,6 +21,8 @@ const init = async () => {
   // Ro.observer(container, profile)
   // // axios
   // document.getElementsByClassName('user')[0].innerHTML = await Hc.getUser(1)
+
+  $('main')[0].innerHTML = Tb.createTable()
 }
 
 window.addEventListener('DOMContentLoaded', function () {

@@ -19,5 +19,10 @@ const createImg = (src) => {
   image.src = src
   return image
 }
-  
-export default { createLogo, createElement, createImg }
+
+const hasProperty = (obj, key) => {
+  return Object.prototype.hasOwnProperty.call(obj, key)
+}
+
+
+export default { createLogo, createElement, createImg, hasProperty }
