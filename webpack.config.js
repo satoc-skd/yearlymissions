@@ -86,18 +86,45 @@ module.exports = {
       },
 
       {
-        test: /.css$/,
+        test: /.scss$/,
 
-        use: [{
-          loader: MiniCssExtractPlugin.loader
-        },
-        {
-          loader: "css-loader",
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: "css-loader",
 
-          options: {
-            sourceMap: true
-          }
-        }]
+            options: {
+              sourceMap: false
+            }
+          },
+
+          {
+            loader: "postcss-loader",
+
+            options: {
+
+              postcssOptions: {
+                // postcss plugins, can be exported to postcss.config.js
+                plugins: function () {
+                  return [
+                    require('autoprefixer')
+                  ];
+                }
+              }
+
+            }
+          },
+
+          {
+            loader: "sass-loader",
+
+            options: {
+              sourceMap: false
+            }
+          },
+        ]
       }
     ]
   },

@@ -1,7 +1,10 @@
 // import Util from './modules/Util'
 // import Ro from './modules/Ro'
 // import Hc from './modules/Hc'
-import '../styles/style.css'
+// import '../styles/style.css'
+
+import 'bootstrap'
+import '../scss/custom.scss'
 
 const init = async () => {
   // document.getElementsByClassName('left')[0].innerHTML = Util.createLogo()
