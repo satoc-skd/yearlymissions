@@ -23,7 +23,7 @@ const createTable = ( mainData ) => {
   
   console.log( mainData )
   // ヘッダを生成
-  const columnName = ['出撃', '工廠', '演習', '遠征', '改装'] 
+  const columnName = ['任務名'] 
   const thead = $('<thead class="thead-light"></thead>')
   thead.append('<tr class="fixed-header-0"></tr>')
   thead.find('tr').append('<th class="fixed-column-0"></th>')
@@ -76,14 +76,11 @@ const createTable = ( mainData ) => {
 
   // 1～12月毎に、任務名を埋めていく
   mainData.forEach(element => {
-    const types = ['refurbishment', 'exercise', 'arsenal', 'expedition', 'sortie']
-    types.forEach(typeName => {
-      if( !util.hasProperty(element, typeName) ) {
-        return
-      }
-      searchCell(result, element.month, typeName).html(createMissionHTML(element.month, typeName, element[typeName]))
+    if( !util.hasProperty( element, 'tasks') ) {
+      return
+    }
 
-    })
+    searchCell( result, element.month ).html(createMissionHTML(element.month, 'tasks', element['tasks']))
 
   })
 
@@ -94,7 +91,7 @@ const createMissionHTML = (month, typeName, captionCotains) => {
   const result = $('<div class="missions"></div>')
   captionCotains.forEach(element => {
     // result.append($(`<li><img src='./assets/sortie-febstart.png' />${element.caption}</li>`))
-    result.append($(`<div id="${element.id}">${crateImageTag(month, typeName)}${element.caption}</div>`))
+    result.append($(`<div id="${element.id}">${crateImageTag(month, element.category)}${element.caption}</div>`))
   })
   return result.prop('outerHTML')
 }
@@ -106,22 +103,8 @@ const crateImageTag = (month, typeName) => {
   return `<img src='./assets/${typeName}-${monthTable[month]}start.png' />`
 }
 
-const searchCell = (tableData, month, typeName) => {
-  const diffTable = {
-    sortie: '出撃',
-    expedition: '遠征',
-    arsenal: '工廠',
-    exercise: '演習',
-    refurbishment: '改装'
-  }
-
-  if ( diffTable[typeName] === undefined ) {
-    return undefined
-  }
-
-  const cellIndex = tableData.find(`thead>tr>th:contains("${diffTable[typeName]}")`)[0].cellIndex
-
-  return tableData.find('tbody>tr').eq(month - 1).children('td').eq(cellIndex - 1)
+const searchCell = (tableData, month) => {
+  return tableData.find('tbody>tr').eq(month - 1).children('td').eq(0)
 }
 
 export default { createTable }
