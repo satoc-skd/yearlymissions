@@ -3,7 +3,8 @@ div.table-wrapper {
     overflow: scroll;
     max-height:400px; /*任意*/
     max-width:1200px; /*任意*/
-    background-color: #fff;
+    // background-color: #fff;
+    background-color: rgb(244, 235, 225);
   }
   
   /*行ヘッダーを固定する。topの値はjsで動的に指定*/
@@ -37,3 +38,26 @@ div.table-wrapper {
   table.sticky-table img {
       zoom: 0.75;
   }
+
+  table.sticky-table ul {
+      margin: 0px 0px;
+  }
+
+  table.sticky-table li {
+      background-color: rgb(228, 212, 196);
+      padding: 5px;
+      margin: 10px 0px;
+      cursor: pointer;
+  }
+
+  table.sticky-table li:first-child {
+    margin: 0px 0px 10px 0px;
+}
+
+table.sticky-table li:last-child {
+    margin: 10px 0px 0px 0px;
+}
+
+table.sticky-table li:only-child {
+    margin: 0px;
+}
