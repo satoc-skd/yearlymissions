@@ -165,10 +165,10 @@ const createTable = () => {
 }
 
 const createMissionHTML = (month, typeName, captionCotains) => {
-  const result = $('<ul></ul>')
+  const result = $('<div class="missions"></div>')
   captionCotains.forEach(element => {
     // result.append($(`<li><img src='./assets/sortie-febstart.png' />${element.caption}</li>`))
-    result.append($(`<li id="${element.id}">${crateImageTag(month, typeName)}${element.caption}</li>`))
+    result.append($(`<div id="${element.id}">${crateImageTag(month, typeName)}${element.caption}</div>`))
   })
   return result.prop('outerHTML')
 }

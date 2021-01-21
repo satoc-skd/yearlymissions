@@ -28,7 +28,7 @@ const init = async () => {
   $('main')[0].innerHTML = Tb.createTable()
   $('main').append( $(md.createModal(detailId)) )
 
-  $('li').on('click', function() {
+  $('.missions div').on('click', function() {
     // c.f.https://stackoverflow.com/questions/10626885/passing-data-to-a-bootstrap-modal
     const modalObj = $(`#${detailId}`)
     const that = $(this)

@@ -29,35 +29,30 @@ div.table-wrapper {
       z-index: 1;
   }
   
-  table.sticky-table ul {
-      list-style: none;
-      padding: 0px;
-      margin: 0px;
-  }
-
   table.sticky-table img {
       zoom: 0.75;
   }
 
-  table.sticky-table ul {
-      margin: 0px 0px;
+  .missions {
+    padding: 0px;
+    margin: 0px;
   }
 
-  table.sticky-table li {
+  .missions div {
       background-color: rgb(228, 212, 196);
       padding: 5px;
       margin: 10px 0px;
       cursor: pointer;
   }
 
-  table.sticky-table li:first-child {
+  .missions div:first-child {
     margin: 0px 0px 10px 0px;
-}
+  }
 
-table.sticky-table li:last-child {
+  .missions div:last-child {
     margin: 10px 0px 0px 0px;
 }
 
-table.sticky-table li:only-child {
+.missions div:only-child {
     margin: 0px;
 }
