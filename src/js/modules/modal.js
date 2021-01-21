@@ -75,7 +75,7 @@ const modalBodyText = ( id ) => {
   }
 
   if ( typeof contents[id] === 'undefined' ) {
-    return 'ありません'
+    return 'うん、「また」なんだ。済まない。'
   }
 
   return contents[id]

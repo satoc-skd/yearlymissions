@@ -12,6 +12,7 @@ import '../scss/custom.scss'
 
 import Tb from './modules/Tb'
 import md from './modules/modal'
+import dt from './modules/data'
 
 const init = async () => {
   // document.getElementsByClassName('left')[0].innerHTML = Util.createLogo()
@@ -25,7 +26,7 @@ const init = async () => {
 
   const detailId = 'p1'
 
-  $('main')[0].innerHTML = Tb.createTable()
+  $('main')[0].innerHTML = Tb.createTable( dt.mainData )
   $('main').append( $(md.createModal(detailId)) )
 
   $('.missions div').on('click', function() {
