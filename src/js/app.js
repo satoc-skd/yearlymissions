@@ -4,6 +4,9 @@
 // import Ro from './modules/Ro'
 // import Hc from './modules/Hc'
 // import '../styles/style.css'
+
+import '../assets/img-loading.gif'
+
 import $ from 'jquery'
 
 import 'bootstrap'
@@ -13,6 +16,18 @@ import '../scss/custom.scss'
 import Tb from './modules/Tb'
 import md from './modules/modal'
 import dt from './modules/data'
+
+let intervalID = 0
+
+$(function() {  // ローディングページを表示する
+  var h = $(window).height()
+  
+  $('#wrap').css('display','none')
+  $('#loader-bg ,#loader').height(h).css('display','block')
+
+  intervalID = setTimeout(stopload(),10000)
+})
+
 
 const init = async () => {
   // document.getElementsByClassName('left')[0].innerHTML = Util.createLogo()
@@ -45,4 +60,13 @@ const init = async () => {
 
 window.addEventListener('DOMContentLoaded', function () {
   init()
+  clearTimeout(intervalID)
+  stopload()
 }, false)
+
+
+function stopload(){  // ローディングページを閉じて、本来のページを表示する。
+  $('#wrap').css('display','block')
+  $('#loader-bg').delay(900).fadeOut(800)
+  $('#loader').delay(600).fadeOut(300)
+}

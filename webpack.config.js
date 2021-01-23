@@ -111,7 +111,7 @@ module.exports = {
 
       // 画像ファイル
       {
-        test: /\.png$/,
+        test: /\.(png|gif)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
