@@ -1,5 +1,5 @@
-function sum(a, b) {
+function sumMothod(a, b) {
   return a + b;
 }
 
-export default sum;
+export default { sumMothod };
