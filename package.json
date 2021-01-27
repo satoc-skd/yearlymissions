@@ -21,6 +21,7 @@
     "bootstrap": "^4.5.3",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
+    "dayjs": "^1.10.4",
     "eslint": "^7.18.0",
     "eslint-loader": "^4.0.2",
     "file-loader": "^6.2.0",
