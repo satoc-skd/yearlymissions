@@ -44,97 +44,20 @@ describe('マンスリー任務有効期限のテスト', () => {
   const currentDate = new Date();
   const TEST_FORMAT = 'YYYY/MM/DD HH:mm:ss'
 
-  it('１日の00:00', () => {
-    const actual =  '2021/01/01 00:00'
-    const expecte = '2021/01/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('１日の04:59', () => {
-    const actual =  '2021/01/01 04:59'
-    const expecte = '2021/01/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('１日の05:00:00', () => {
-    const actual =  '2021/01/01 05:00:00'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('１日の23:59', () => {
-    const actual =  '2021/01/01 23:59'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('2日の00:00', () => {
-    const actual =  '2021/01/02 00:00'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('2日の04:59', () => {
-    const actual =  '2021/01/02 04:59'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('2日の05:00', () => {
-    const actual =  '2021/01/02 05:00'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('2日の23:59', () => {
-    const actual =  '2021/01/02 23:59'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('31日の23:59', () => {
-    const actual =  '2021/01/31 23:59'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('翌1日の00:00', () => {
-    const actual =  '2021/02/01 00:00'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('翌1日の04:59', () => {
-    const actual =  '2021/02/01 04:59'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('翌1日の05:00', () => {
-    const actual =  '2021/02/01 05:00'
-    const expecte = '2021/03/01 04:59:59'
+  it.each([
+    ['2021/01/01 00:00', '2021/01/01 04:59:59'],
+    ['2021/01/01 04:59', '2021/01/01 04:59:59'],
+    ['2021/01/01 05:00:00', '2021/02/01 04:59:59'],
+    ['2021/01/01 23:59', '2021/02/01 04:59:59'],
+    ['2021/01/02 00:00', '2021/02/01 04:59:59'],
+    ['2021/01/02 04:59', '2021/02/01 04:59:59'],
+    ['2021/01/02 05:00', '2021/02/01 04:59:59'],
+    ['2021/01/02 23:59', '2021/02/01 04:59:59'],
+    ['2021/01/31 23:59', '2021/02/01 04:59:59'],
+    ['2021/02/01 00:00', '2021/02/01 04:59:59'],
+    ['2021/02/01 04:59', '2021/02/01 04:59:59'],
+    ['2021/02/01 05:00', '2021/03/01 04:59:59'],
+  ])("%s -> %s", (actual, expecte) => {
     expect(
       dayjs(expiration.monthly( new Date(actual) )).format(TEST_FORMAT) 
     ).toEqual(expecte);
