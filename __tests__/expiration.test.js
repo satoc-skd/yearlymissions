@@ -21,22 +21,7 @@ describe('デイリー任務有効期限のテスト', () => {
     ).toEqual(expecte);
   });
   
-  it('デイリー任務（04:59:59）', () => {
-    const actual =  '2021/01/26 04:59:59'
-    const expecte = '2021/01/26 04:59:59'
-    expect(
-      dayjs(expiration.daily( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
   
-  it('デイリー任務（1月末 05:00:00）', () => {
-    const actual =  '2021/01/31 05:00:00'
-    const expecte = '2021/02/01 04:59:59'
-    expect(
-      dayjs(expiration.daily( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
   it('デイリー任務：型エラーチェック', () => {
     // toThrow を使う場合、expect の引数には関数を渡す必要があります。
     // c.f.https://teratail.com/questions/259723
