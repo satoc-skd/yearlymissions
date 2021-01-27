@@ -7,41 +7,15 @@ describe('デイリー任務有効期限のテスト', () => {
   const currentDate = new Date();
   const TEST_FORMAT = 'YYYY/MM/DD HH:mm:ss'
 
-  it('デイリー任務（05:00:00）', () => {
-    const actual =  '2021/01/25 05:00:00'
-    const expecte = '2021/01/26 04:59:59'
-    expect(
-      dayjs(expiration.daily( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('デイリー任務（23:59:59）', () => {
-    const actual =  '2021/01/25 23:59:59'
-    const expecte = '2021/01/26 04:59:59'
-    expect(
-      dayjs(expiration.daily( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-
-  it('デイリー任務（23:59）', () => {
-    const actual =  '2021/01/25 23:59'
-    const expecte = '2021/01/26 04:59:59'
-    expect(
-      dayjs(expiration.daily( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-  
-  it('デイリー任務（00:00）', () => {
-    const actual =  '2021/01/26 00:00'
-    const expecte = '2021/01/26 04:59:59'
-    expect(
-      dayjs(expiration.daily( new Date(actual) )).format(TEST_FORMAT) 
-    ).toEqual(expecte);
-  });
-  
-  it('デイリー任務（04:59）', () => {
-    const actual =  '2021/01/26 04:59'
-    const expecte = '2021/01/26 04:59:59'
+  it.each([
+    ['2021/01/25 05:00:00', '2021/01/26 04:59:59'],
+    ['2021/01/25 23:59:59', '2021/01/26 04:59:59'],
+    ['2021/01/25 23:59',    '2021/01/26 04:59:59'],
+    ['2021/01/26 00:00',    '2021/01/26 04:59:59'],
+    ['2021/01/26 04:59',    '2021/01/26 04:59:59'],
+    ['2021/01/26 04:59:59', '2021/01/26 04:59:59'],
+    ['2021/01/31 05:00:00', '2021/02/01 04:59:59'],
+  ])("%s -> %s", (actual, expecte) => {
     expect(
       dayjs(expiration.daily( new Date(actual) )).format(TEST_FORMAT) 
     ).toEqual(expecte);
