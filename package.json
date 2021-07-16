@@ -4,8 +4,7 @@
   "description": "My webpack project",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "test": "jest",
     "dev": "webpack --watch",
     "start": "webpack serve"
   },
@@ -18,9 +17,11 @@
     "@webpack-cli/init": "^1.1.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "bootstrap": "^4.5.3",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
+    "dayjs": "^1.10.4",
     "eslint": "^7.18.0",
     "eslint-loader": "^4.0.2",
     "file-loader": "^6.2.0",
