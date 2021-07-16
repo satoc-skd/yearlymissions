@@ -3,8 +3,8 @@
 | ↓期間／種別→ | 出撃 | 演習 | 遠征 | 工廠 | 改装 |
 | --- | --- | --- | --- | --- | --- |
 | 年1月～ | not available | not available | not available | ![工廠：年1月～](./src/assets/arsenal-yearly-jan.png) | not available |
-| 年2月～ | ![出撃：年2月～](./src/assets/sortie-yearly-feb.png) | not available | ![遠征：年2月～](./src/assets/expedition-yearly-feb.png) | not available | not available |
-| 年3月～ | ![出撃：年3月～](./src/assets/sortie-yearly-mar.png) | not available | ![遠征：年3月～](./src/assets/expedition-yearly-mar.png) | not available | not available |
+| 年2月～ | ![出撃：年2月～](./src/assets/sortie-yearly-feb.png) | not available | ![遠征：年2月～](./src/assets/expedition-yearly-feb.png) | not available | ![改装：年2月～](./src/assets/modernization-yearly-feb.png) |
+| 年3月～ | ![出撃：年3月～](./src/assets/sortie-yearly-mar.png) | ![演習：年3月～](./src/assets/exercise-yearly-mar.png) | ![遠征：年3月～](./src/assets/expedition-yearly-mar.png) | not available | not available |
 | 年4月～ | not available | not available | not available | not available | not available |
 | 年5月～ | not available | not available | ![遠征：年5月～](./src/assets/expedition-yearly-may.png) | not available | not available |
 | 年6月～ | not available | not available | not available | not available | not available |
