@@ -12,5 +12,5 @@
 | 年8月～ | not available | not available | ![遠征：年8月～](./src/assets/expedition-yearly-aug.png) | not available | not available |
 | 年9月～ | ![出撃：年9月～](./src/assets/sortie-yearly-sep.png) | not available | ![遠征：年9月～](./src/assets/expedition-yearly-sep.png) | ![工廠：年9月～](./src/assets/arsenal-yearly-sep.png) | not available |
 | 年10月～ | not available | ![演習：年10月～](./src/assets/exercise-yearly-oct.png) | not available | ![工廠：年10月～](./src/assets/arsenal-yearly-oct.png) | not available |
-| 年11月～ | not available | not available | not available | ![工廠：年11月～](./src/assets/arsenal-yearly-nov.png) | ![改装：年11月～](./src\assets\modernization-yearly-nov.png) |
+| 年11月～ | not available | not available | not available | ![工廠：年11月～](./src/assets/arsenal-yearly-nov.png) | ![改装：年11月～](./src/assets/modernization-yearly-nov.png) |
 | 年12月～ | not available | not available | not available | not available | not available |
