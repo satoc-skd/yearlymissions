@@ -2,20 +2,20 @@ import $ from 'jquery'
 
 import util from './util'
 
-import '../../assets/sortie-febstart.png'
-import '../../assets/sortie-marstart.png'
-import '../../assets/sortie-septstart.png'
-import '../../assets/arsenal-janstart.png'
-import '../../assets/arsenal-septstart.png'
-import '../../assets/arsenal-octstart.png'
-import '../../assets/arsenal-novstart.png'
-import '../../assets/expedition-febstart.png'
-import '../../assets/expedition-marstart.png'
-import '../../assets/expedition-maystart.png'
-import '../../assets/expedition-augstart.png'
-import '../../assets/expedition-septstart.png'
-import '../../assets/exercise-octstart.png'
-import '../../assets/refurbishment-novstart.png'
+import '../../assets/sortie-yearly-feb.png'
+import '../../assets/sortie-yearly-mar.png'
+import '../../assets/sortie-yearly-sep.png'
+import '../../assets/arsenal-yearly-jan.png'
+import '../../assets/arsenal-yearly-sep.png'
+import '../../assets/arsenal-yearly-oct.png'
+import '../../assets/arsenal-yearly-nov.png'
+import '../../assets/expedition-yearly-feb.png'
+import '../../assets/expedition-yearly-mar.png'
+import '../../assets/expedition-yearly-may.png'
+import '../../assets/expedition-yearly-aug.png'
+import '../../assets/expedition-yearly-sep.png'
+import '../../assets/exercise-yearly-oct.png'
+import '../../assets/modernization-yearly-nov.png'
 
 const createTable = ( mainData ) => {
   // https://qiita.com/rokko2massy/items/83283bce06acbba7a4f0
@@ -90,7 +90,7 @@ const createTable = ( mainData ) => {
 const createMissionHTML = (month, typeName, captionCotains) => {
   const result = $('<div class="missions"></div>')
   captionCotains.forEach(element => {
-    // result.append($(`<li><img src='./assets/sortie-febstart.png' />${element.caption}</li>`))
+    // result.append($(`<li><img src='./assets/sortie-yearly-feb.png' />${element.caption}</li>`))
     result.append($(`<div id="${element.id}">${crateImageTag(month, element.category)}${element.caption}</div>`))
   })
   return result.prop('outerHTML')
